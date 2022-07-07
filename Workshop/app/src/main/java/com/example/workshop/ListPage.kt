@@ -23,27 +23,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
-/*@Composable
-fun ListPage(navController: NavController){
-
-    LazyColumn{
-        itemsIndexed(
-            listOf("Titanic","Forrest Gump","Inception","Star Wars","Gravity","The Matrix","Parasite","Aliens","Up","Pianist","Lıfe of Pi")
-        ){
-            index, string ->
-            Text(text = string,
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 24.dp)
-            )
-        }
-    }
-}
-
- */
-
 @Composable
 fun MovieCard(mve: MovieDetails) {
     Card(
@@ -98,14 +77,15 @@ fun MovieCard(mve: MovieDetails) {
 @Composable
 fun DetailsContent(navController: NavController) {
 
-    val films = remember { Details.MovieDetailsList }
+    val movies = remember { Details.MovieDetailsList }
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
     ) {
         items(
-            films
+            movies
         ) {
             MovieCard(mve = it)
         }
     }
 }
+
